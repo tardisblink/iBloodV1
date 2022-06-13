@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
 
-import Login from './src/Telas/1Login';             // TELA 01
-import SingUp from './src/Telas/2SingUp';           // TELA 02
-import Main from './src/Telas/3Main';               // TELA 03
-import Quest from './src/Telas/4Quest';             // TELA 04
-import Mapa from './src/Telas/5Mapa';               // TELA 05 
-import Agenda from './src/Telas/6Agenda';         // TELA 06
-import Confirma from './src/Telas/7Confirma';     // TELA 07
-import Concluido from './src/Telas/8Concluido';     // TELA 08
-import Medula from './src/Telas/9Medula';         // TELA 09
-import InfoMedula from './src/Telas/10InfoMedula'    // TELA 10
-import Perfil from './src/Telas/11Perfil';         // TELA 11
-import EditPerfil from './src/Telas/12EditPerfil'; // TELA 12
-import Estoque from './src/Telas/13Estoque';         // TELA 13
-import Menu from './src/Telas/14Menu';             // TELA 14
-import Sobre from './src/Telas/15Sobre';             // TELA 15
-import WorkBench from './src/Telas/16WorkBench';   // TELA 16 WORKBENCH
+import      Login           from     './src/Telas/01_Login';                    // TELA 01
+import      SingUp          from     './src/Telas/02_SingUp';                   // TELA 02
+import      Main            from     './src/Telas/03_Main';                     // TELA 03
+import      Quest           from     './src/Telas/04_Quest';                    // TELA 04
+import      Mapa            from     './src/Telas/05_Mapa';                     // TELA 05 
+import      Agenda          from     './src/Telas/06_Agenda';                   // TELA 06
+import      Confirma        from     './src/Telas/07_Confirma';                 // TELA 07
+import      Concluido       from     './src/Telas/08_Concluido';                // TELA 08
+import      Medula          from     './src/Telas/09_Medula';                   // TELA 09
+import      InfoMedula      from     './src/Telas/10_InfoMedula'               // TELA 10
+import      Perfil          from     './src/Telas/11_Perfil';                  // TELA 11
+import      EditPerfil      from     './src/Telas/12_EditPerfil';              // TELA 12
+import      Estoque         from     './src/Telas/13_Estoque';                 // TELA 13
+import      Menu            from     './src/Telas/14_Menu';                    // TELA 14
+import      Sobre           from     './src/Telas/15_Sobre';                   // TELA 15
+import      WorkBench       from     './src/Telas/16_WorkBench';               // TELA 16 **ADMIN
+import      SobreApp        from     './src/Telas/17_SobreApp';                 // TELA 17 
 
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -26,7 +27,6 @@ class App extends Component{
         const Stack = createNativeStackNavigator();
             return(
                 <NavigationContainer>
-
                     <Stack.Navigator initialRouteName = 'Login'>
 
                             <Stack.Screen
@@ -172,6 +172,16 @@ class App extends Component{
                             headerStyle: {backgroundColor: 'darkred'},
                             headerTintColor: 'white'
                             }}/>
+
+                            <Stack.Screen
+                            name = "SobreApp" component = {SobreApp}
+                            options = {{
+                            headerShown: false,
+                            title: "Sobre o App",
+                            headerStyle: {backgroundColor: 'darkred'},
+                            headerTintColor: 'white'
+                            }}/>
+
 
                     </Stack.Navigator>
 

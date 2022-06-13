@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, TouchableHighlight, StyleSheet, ScrollView} from 'react-native';
-
+import {View, Text, Image, TouchableOpacity, StyleSheet, ScrollView} from 'react-native';
 
 class Sobre extends Component {
     render(){
@@ -9,23 +8,33 @@ class Sobre extends Component {
 
                 <View style = {estilos.fundo}>
 
-                    <Image source = {require('../Img/Bg.png')} style = {estilos.imagemfundo}/>
+                    <Image source = {require('../Img/Bg.png')} style = {estilos.img_fundo}/>
 
-                    <View style = {estilos.viewmenu}>
+                    <View style = {estilos.view_menu}>
 
-                        <TouchableHighlight onPress = {() =>this.props.navigation.navigate('Menu')}>
+                        <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Menu')}>
 
-                            <Image source = {require('../Img/Menu.png')} style = {estilos.imagemmenu}/>
+                            <Image source = {require('../Img/Menu.png')} style = {estilos.img_menu}/>
 
-                        </TouchableHighlight>
+                        </TouchableOpacity>
                         
                     </View>
 
-                    <View style = {estilos.frente}>
+                    <View style = {estilos.view_volta}>
 
-                        <Image source = {require('../Img/Sobre.png')} style = {estilos.imagem}/>
+                        <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Main')}>
 
-                        <View style = {estilos.viewtexto}>
+                            <Image source = {require('../Img/Volta.png')} style = {estilos.img_volta}/>
+
+                        </TouchableOpacity>
+
+                    </View>
+
+                    <View style = {estilos.body}>
+
+                        <Image source = {require('../Img/Sobre.png')} style = {estilos.img_sobre}/>
+
+                        <View style = {estilos.view_texto}>
 
                             <Text style = {estilos.titulo}>Você sabia a Importância da doação?</Text>
 
@@ -62,7 +71,6 @@ class Sobre extends Component {
 
 
 const estilos = StyleSheet.create({
-
     geral:{
         flex:1,
         flexDirection:'column',
@@ -76,7 +84,7 @@ const estilos = StyleSheet.create({
         position:'relative',
     },
 
-    imagemfundo:{
+    img_fundo:{
         flex:1,
         width:450,
         height:100,
@@ -84,7 +92,7 @@ const estilos = StyleSheet.create({
         opacity:1,
     },
 
-    viewmenu:{
+    view_menu:{
         flex:1,
         width:30,
         height:30,
@@ -94,17 +102,33 @@ const estilos = StyleSheet.create({
         position:'absolute',
     },
 
-    imagemmenu:{
+    img_menu:{
         width:30,
         height:30,
         padding:17,
-        backgroundColor:'darkred',
     },
 
-    frente:{
+    view_volta:{
+        flex:1,
+        width:'100%',
+        height:30,
+        marginTop:40,
+        paddingRight:20,
+        opacity:1,
+        position:'absolute',
+        alignItems:"flex-end"
+    },
+
+    img_volta:{
+        width:30,
+        height:30,
+        padding:17,
+    },
+
+    body:{
         flex:2,
         paddingBottom:'10%',
-        paddingTop:80,
+        paddingTop:40,
         borderTopStartRadius:30,
         borderTopEndRadius:30,
         backgroundColor:'white',
@@ -112,7 +136,7 @@ const estilos = StyleSheet.create({
         justifyContent:'center'
     },
 
-    imagem:{
+    img_sobre:{
         width:350, 
         height:250,
         borderRadius:30,
@@ -122,7 +146,7 @@ const estilos = StyleSheet.create({
         borderWidth:1
     },
 
-    viewtexto:{
+    view_texto:{
         alignItems:'flex-start',
         paddingTop:10,
         paddingBottom:20,
@@ -170,7 +194,6 @@ const estilos = StyleSheet.create({
         color:'grey',
         textAlign:'justify'
     }
-    
 });
 
 export default Sobre;

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, TouchableHighlight, StyleSheet, ScrollView} from 'react-native';
-
+import {View, Text, Image, TouchableOpacity, StyleSheet, ScrollView} from 'react-native';
 
 class InfoMedula extends Component {
     render(){
@@ -9,29 +8,29 @@ class InfoMedula extends Component {
 
                 <View style = {estilos.fundo}>
 
-                    <Image source = {require('../Img/Bg.png')} style = {estilos.imagemfundo}/>
+                    <Image source = {require('../Img/Bg.png')} style = {estilos.img_fundo}/>
 
-                    <View style = {estilos.viewmenu}>
+                    <View style = {estilos.view_menu}>
 
-                        <TouchableHighlight onPress = {() =>this.props.navigation.navigate('Menu')}>
+                        <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Menu')}>
 
-                            <Image source = {require('../Img/Menu.png')} style = {estilos.imagemmenu}/>
+                            <Image source = {require('../Img/Menu.png')} style = {estilos.img_menu}/>
 
-                        </TouchableHighlight>
+                        </TouchableOpacity>
 
                     </View>
 
-                    <View style = {estilos.frente}>
+                    <View style = {estilos.body}>
 
-                        <Image source = {require('../Img/Medula.png')} style = {estilos.imagem}/>
+                        <Image source = {require('../Img/Medula.png')} style = {estilos.img_infomedula}/>
 
-                        <View style = {estilos.viewtextoimagem}>
+                        <View style = {estilos.view_texto_img_infomedula}>
 
-                            <Text style = {estilos.textoimagem}>Doação de Medula Óssea</Text>
+                            <Text style = {estilos.texto_img_infomedula}>Doação de Medula Óssea</Text>
 
                         </View>
 
-                        <View style = {estilos.viewtexto}>
+                        <View style = {estilos.view_texto}>
 
                             <Text style = {estilos.titulo}>             O que é a Medula Óssea?</Text>
 
@@ -67,7 +66,7 @@ class InfoMedula extends Component {
 
                             <Text style = {estilos.texto}>      Os requisitos para fazer uma doação de medula óssea são: ter entre 18 e 55 anos, estar em bom estado geral de saúde, não ter doenças infecciosas ou incapacitantes, doença neoplásica (câncer), hematológica (do sangue) ou do sistema imunológico.</Text>
 
-                            <Text style = {estilos.textovermelho}>      Agora que você entendeu o que é a doação de Medula e o quão necessária ela é, que tal realizar o seu cadastro no dia da sua doação de sangue, ajude a salvar mais vidas!</Text>
+                            <Text style = {estilos.texto_vermelho}>      Agora que você entendeu o que é a doação de Medula e o quão necessária ela é, que tal realizar o seu cadastro no dia da sua doação de sangue, ajude a salvar mais vidas!</Text>
 
                             <Text style = {estilos.info}>Para mais informações ligue para:</Text>
 
@@ -105,7 +104,7 @@ const estilos = StyleSheet.create({
         position:'relative',
     },
 
-    imagemfundo:{
+    img_fundo:{
         flex:1,
         width:450,
         height:100,
@@ -113,7 +112,7 @@ const estilos = StyleSheet.create({
         opacity:1,
     },
 
-    viewmenu:{
+    view_menu:{
         flex:1,
         width:30,
         height:30,
@@ -123,17 +122,16 @@ const estilos = StyleSheet.create({
         position:'absolute',
     },
 
-    imagemmenu:{
+    img_menu:{
         width:30,
         height:30,
         padding:17,
-        backgroundColor:'darkred',
     },
 
-    frente:{
+    body:{
         flex:2,
         paddingBottom:'10%',
-        paddingTop:80,
+        paddingTop:40,
         borderTopStartRadius:30,
         borderTopEndRadius:30,
         backgroundColor:'white',
@@ -141,7 +139,7 @@ const estilos = StyleSheet.create({
         justifyContent:'center'
     },
 
-    imagem:{
+    img_infomedula:{
         width:350, 
         height:250,
         borderRadius:30,
@@ -151,7 +149,7 @@ const estilos = StyleSheet.create({
         borderWidth:1
     },
 
-    viewtexto:{
+    view_texto:{
         alignItems:'flex-start',
         paddingTop:10,
         paddingBottom:20,
@@ -174,7 +172,7 @@ const estilos = StyleSheet.create({
         textAlign:'justify'
     },
 
-    textovermelho:{
+    texto_vermelho:{
         marginTop:10,
         fontSize:22,
         fontStyle:'italic',
@@ -210,14 +208,14 @@ const estilos = StyleSheet.create({
         textAlign:'justify'
     },
 
-    viewtextoimagem:{
+    view_texto_img_infomedula:{
         width:350,
         opacity:1,
-        marginTop:'3000%',
+        marginTop:'3100%',
         position:'absolute'
     },
 
-    textoimagem:{
+    texto_img_infomedula:{
         color:'darkred',
         width:350,
         textAlign:'center',

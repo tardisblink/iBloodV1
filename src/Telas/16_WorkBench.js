@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, TextInput, Image, TouchableHighlight, StyleSheet, ScrollView} from 'react-native';
 
 
-class Main extends Component {
+class WorkBench extends Component {
 render(){
     return(
     <ScrollView style = {estilos.geral}>
@@ -70,7 +70,6 @@ const estilos = StyleSheet.create({
         width:30,
         height:30,
         padding:17,
-        backgroundColor:'yellow',
     },
 
     imagem:{
@@ -147,4 +146,4 @@ const estilos = StyleSheet.create({
     },
 });
 
-export default Main;
+export default WorkBench;

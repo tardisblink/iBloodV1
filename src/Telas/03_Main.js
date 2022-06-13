@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, TouchableHighlight, StyleSheet, ScrollView} from 'react-native';
-
+import {View, Text, Image, TouchableOpacity, StyleSheet, ScrollView} from 'react-native';
 
 class Main extends Component {
     render(){
@@ -9,45 +8,45 @@ class Main extends Component {
 
                 <View style = {estilos.fundo}>
 
-                    <Image source = {require('../Img/Bg.png')} style = {estilos.imagemfundo}/>
+                    <Image source = {require('../Img/Bg.png')} style = {estilos.img_fundo}/>
 
-                    <View style = {estilos.viewmenu}>
+                    <View style = {estilos.view_menu}>
 
-                        <TouchableHighlight onPress = {() => this.props.navigation.navigate('Menu')}>
+                        <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Menu')}>
 
-                            <Image source = {require('../Img/Menu.png')} style = {estilos.imagemmenu}/>
+                            <Image source = {require('../Img/Menu.png')} style = {estilos.img_menu}/>
 
-                        </TouchableHighlight>
+                        </TouchableOpacity>
 
                     </View>
 
-                    <View style = {estilos.frente}>
+                    <View style = {estilos.body}>
 
-                        <Image source = {require('../Img/Mulher.png')} style = {estilos.imagem}/>
+                        <Image source = {require('../Img/Mulher.png')} style = {estilos.img_main}/>
 
-                        <View style = {estilos.viewtexto}>
+                        <View style = {estilos.view_texto_img_main}>
 
-                            <Text style = {estilos.textoimagem}>Doe Sangue e Salve Vidas!</Text>
-
-                        </View>
-
-                        <View style ={estilos.viewbotao}>
-
-                            <TouchableHighlight style = {estilos.botao} onPress = {() =>this.props.navigation.navigate('Mapa')}>
-
-                                <Text style = {estilos.textobotao}>Doe Aqui</Text>
-
-                            </TouchableHighlight>
+                            <Text style = {estilos.texto_img_main}>Doe Sangue e Salve Vidas!</Text>
 
                         </View>
 
-                        <View style ={estilos.viewbotao}>
+                        <View style ={estilos.view_botao}>
 
-                            <TouchableHighlight style = {estilos.botao} onPress = {() =>this.props.navigation.navigate('Quest')}>
+                            <TouchableOpacity style = {estilos.botao} onPress = {() =>this.props.navigation.navigate('Mapa')}>
 
-                                <Text style = {estilos.textobotao}>Saiba se está Apto</Text>
+                                <Text style = {estilos.texto_botao}>Doe Aqui</Text>
 
-                            </TouchableHighlight>
+                            </TouchableOpacity>
+
+                        </View>
+
+                        <View style ={estilos.view_botao}>
+
+                            <TouchableOpacity style = {estilos.botao} onPress = {() =>this.props.navigation.navigate('Quest')}>
+
+                                <Text style = {estilos.texto_botao}>Saiba se está Apto</Text>
+
+                            </TouchableOpacity>
 
                         </View>
 
@@ -75,7 +74,7 @@ const estilos = StyleSheet.create({
         position:'relative',
     },
 
-    imagemfundo:{
+    img_fundo:{
         flex:1,
         width:450,
         height:100,
@@ -83,7 +82,7 @@ const estilos = StyleSheet.create({
         opacity:1,
     },
 
-    viewmenu:{
+    view_menu:{
         flex:1,
         width:30,
         height:30,
@@ -93,17 +92,16 @@ const estilos = StyleSheet.create({
         position:'absolute',
     },
 
-    imagemmenu:{
+    img_menu:{
         width:30,
         height:30,
         padding:17,
-        backgroundColor:'darkred',
     },
 
-    frente:{
+    body:{
         flex:2,
         paddingBottom:'10%',
-        paddingTop:80,
+        paddingTop:40,
         borderTopStartRadius:30,
         borderTopEndRadius:30,
         backgroundColor:'white',
@@ -111,9 +109,9 @@ const estilos = StyleSheet.create({
         justifyContent:'center'
     },
 
-    imagem:{
+    img_main:{
         width:350, 
-        height:250,
+        height:200,
         borderRadius:30,
         borderColor:'darkred',
         opacity:0.4,
@@ -121,22 +119,22 @@ const estilos = StyleSheet.create({
         borderWidth:1
     },
 
-    viewtexto:{
+    view_texto_img_main:{
         width:350,
         opacity:1,
-        paddingBottom:'40%',
+        paddingBottom:'55%',
         justifyContent:'center',
         position:'absolute'
     },
 
-    textoimagem:{
+    texto_img_main:{
         color:'darkred',
         width:350,
         textAlign:'center',
         fontSize:30
     },
 
-    viewbotao:{
+    view_botao:{
         alignItems:'center', 
         justifyContent:'center',
         marginTop:'10%'
@@ -148,14 +146,13 @@ const estilos = StyleSheet.create({
         width:200,
         height:45, 
         borderRadius:25,
-        fontSize:20,
         marginTop:10,
         alignItems:'center', 
         justifyContent:'center',
         borderStyle:'solid',  
     },
 
-    textobotao:{
+    texto_botao:{
         color:'white', 
         fontWeight:'bold', 
         fontSize:20

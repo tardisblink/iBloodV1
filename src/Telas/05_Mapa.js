@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, TouchableHighlight, StyleSheet, ScrollView} from 'react-native';
-
+import {View, Text, Image, TouchableOpacity, StyleSheet, ScrollView} from 'react-native';
 
 class Mapa extends Component {
     render(){
@@ -9,67 +8,67 @@ class Mapa extends Component {
 
                 <View style = {estilos.fundo}>
 
-                    <Image source = {require('../Img/Bg.png')} style = {estilos.imagemfundo}/>
+                    <Image source = {require('../Img/Bg.png')} style = {estilos.img_fundo}/>
 
-                    <View style = {estilos.viewmenu}>
+                    <View style = {estilos.view_menu}>
 
-                        <TouchableHighlight onPress = {() =>this.props.navigation.navigate('Menu')}>
+                        <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Menu')}>
 
-                            <Image source = {require('../Img/Menu.png')} style = {estilos.imagemmenu}/>
+                            <Image source = {require('../Img/Menu.png')} style = {estilos.img_menu}/>
 
-                        </TouchableHighlight>
+                        </TouchableOpacity>
                 
                     </View>
 
-                    <View style = {estilos.frente}>
+                    <View style = {estilos.view_volta}>
 
-                    <View style = {estilos.viewvolta}>
+                        <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Main')}>
 
-                        <TouchableHighlight onPress = {() =>this.props.navigation.navigate('Main')}>
+                            <Image source = {require('../Img/Volta.png')} style = {estilos.img_volta}/>
 
-                            <Image source = {require('../Img/Volta.png')} style = {estilos.imagemvolta}/>
-
-                        </TouchableHighlight>
+                        </TouchableOpacity>
 
                     </View>
 
-                        <View style = {estilos.viewtitulo}>
+                    <View style = {estilos.body}>
+
+                        <View style = {estilos.view_titulo}>
 
                             <Text style = {estilos.titulo}>Escolha o local de doação:</Text>
 
                         </View>
 
-                        <View style = {estilos.viewlocal}>
+                        <View style = {estilos.view_local}>
 
                             <Image source = {require('../Img/Ponteiro.png')}/>
 
-                            <TouchableHighlight style = {estilos.local} onPress = {() =>this.props.navigation.navigate('Confirma')}>
+                            <TouchableOpacity style = {estilos.local} onPress = {() =>this.props.navigation.navigate('Confirma')}>
 
                                 <Text style = {estilos.local}>Hemobanco</Text>
 
-                            </TouchableHighlight>
+                            </TouchableOpacity>
 
                         </View>
 
-                        <View style = {estilos.viewmapa}>
+                        <View style = {estilos.view_mapa}>
 
                             <Image source = {require('../Img/Hemobanco.png')} style = {estilos.mapa}/>
 
                         </View>
 
-                        <View style = {estilos.viewlocal}>
+                        <View style = {estilos.view_local}>
 
                             <Image source = {require('../Img/Ponteiro.png')}/>
 
-                            <TouchableHighlight style = {estilos.local} onPress = {() =>this.props.navigation.navigate('Confirma')}>
+                            <TouchableOpacity style = {estilos.local} onPress = {() =>this.props.navigation.navigate('Confirma')}>
 
                                 <Text style = {estilos.local}>Hemepar</Text>
 
-                            </TouchableHighlight>
+                            </TouchableOpacity>
 
                         </View>
 
-                        <View style = {estilos.viewmapa}>
+                        <View style = {estilos.view_mapa}>
 
                             <Image source = {require('../Img/Hemepar.png')} style = {estilos.mapa}/>
 
@@ -97,18 +96,16 @@ const estilos = StyleSheet.create({
         flexDirection:'column',
         backgroundColor:'crimson',
         position:'relative',
-        
     },
 
-    imagemfundo:{
+    img_fundo:{
         flex:1,
         width:450,
         height:100,
         paddingBottom:"10%",
-        opacity:1,
     },
 
-    viewmenu:{
+    view_menu:{
         flex:1,
         width:30,
         height:30,
@@ -118,42 +115,40 @@ const estilos = StyleSheet.create({
         position:'absolute',
     },
 
-    viewvolta:{
+    view_volta:{
         flex:1,
         width:'100%',
         height:30,
-        marginTop:20,
+        marginTop:40,
         paddingRight:20,
         opacity:1,
         position:'absolute',
         alignItems:"flex-end"
     },
 
-    imagemmenu:{
+    img_menu:{
         width:30,
         height:30,
         padding:17,
-        backgroundColor:'darkred',
     },
 
-    imagemvolta:{
+    img_volta:{
         width:30,
         height:30,
         padding:17,
-        backgroundColor:'white',
     },
 
-    frente:{
+    body:{
         flex:2,
         paddingBottom:'10%',
-        paddingTop:80,
+        paddingTop:40,
         borderTopStartRadius:30,
         borderTopEndRadius:30,
         backgroundColor:'white',
         alignItems:'center', 
     },
 
-    viewtitulo:{
+    view_titulo:{
         alignItems:'center',
         marginBottom:30
     },
@@ -172,7 +167,7 @@ const estilos = StyleSheet.create({
         textDecorationLine:'underline'
     },
 
-    viewlocal:{
+    view_local:{
         width:350,
         backgroundColor:'lightgrey',
         paddingTop:20,
@@ -183,7 +178,7 @@ const estilos = StyleSheet.create({
         borderTopRightRadius:25
     },
 
-    viewmapa:{
+    view_mapa:{
         width:350,
         backgroundColor:'lightgrey',
         paddingBottom:20,

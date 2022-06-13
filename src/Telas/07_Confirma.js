@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
-import {View, Text, Image, TouchableHighlight, StyleSheet, ScrollView, Alert} from 'react-native';
+import {View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, Alert} from 'react-native';
 
 class Confirma extends Component {
 
     Alert = () =>
     Alert.alert(
-        
-        "ATENÇÃO: Confirma o agendamento da sua doação de sangue para:",
-        "Sex, 12 de Janeiro de 2022 no Hemepar?",
+        "Atenção",
+        "Confirma?",
         [
-        {text: "Cancelar", onPress: () => this.props.navigation.navigate('')},
+        {text: "Cancelar", onPress: () => this.props.navigation.navigate('Mapa')},
         {text: "Confirma", onPress: () => this.props.navigation.navigate('Concluido')}
         ]
     );
@@ -20,26 +19,31 @@ class Confirma extends Component {
 
                 <View style = {estilos.fundo}>
 
-                    <Image source = {require('../Img/Bg.png')} style = {estilos.imagemfundo}/>
+                    <Image source = {require('../Img/Bg.png')} style = {estilos.img_fundo}/>
 
-                    <View style = {estilos.viewmenu}>
+                    <View style = {estilos.view_menu}>
 
-                        <TouchableHighlight onPress = {() =>this.props.navigation.navigate('Menu')}>
+                        <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Menu')}>
 
-                            <Image source = {require('../Img/Menu.png')} style = {estilos.imagemmenu}/>
+                            <Image source = {require('../Img/Menu.png')} style = {estilos.img_menu}/>
 
-                        </TouchableHighlight>
+                        </TouchableOpacity>
+
+                    </View>
+                    
+                    <View style = {estilos.view_volta}>
+
+                        <TouchableOpacity onPress = {() =>this.props.navigation.navigate('')}>
+
+                            <Image source = {require('../Img/Volta.png')} style = {estilos.img_volta}/>
+
+                        </TouchableOpacity>
 
                     </View>
 
-                    <View style = {estilos.frente}>
+                    <View style = {estilos.body}>
 
-                        <View style = {estilos.viewtextoimagem}>
-
-
-                        </View>
-
-                        <View style = {estilos.viewtexto}>
+                        <View style = {estilos.view_texto}>
 
                             <Text style = {estilos.titulo}>     O que Levar?</Text>
 
@@ -58,11 +62,11 @@ class Confirma extends Component {
 
                         <View style ={estilos.viewbotao}>
 
-                            <TouchableHighlight style = {estilos.botao} onPress = {this.Alert}>
+                            <TouchableOpacity style = {estilos.botao} onPress = {() =>this.props.navigation.navigate('Agenda')}>
 
-                                <Text style = {estilos.textobotao}>Agendar</Text>
+                                <Text style = {estilos.texto_botao}>Prosseguir</Text>
 
-                            </TouchableHighlight>
+                            </TouchableOpacity>
 
                         </View>
 
@@ -90,7 +94,7 @@ const estilos = StyleSheet.create({
         position:'relative',
     },
 
-    imagemfundo:{
+    img_fundo:{
         flex:1,
         width:450,
         height:100,
@@ -98,7 +102,7 @@ const estilos = StyleSheet.create({
         opacity:1,
     },
 
-    viewmenu:{
+    view_menu:{
         flex:1,
         width:30,
         height:30,
@@ -108,17 +112,33 @@ const estilos = StyleSheet.create({
         position:'absolute',
     },
 
-    imagemmenu:{
+    img_menu:{
         width:30,
         height:30,
         padding:17,
-        backgroundColor:'darkred',
     },
 
-    frente:{
+    view_volta:{
+        flex:1,
+        width:'100%',
+        height:30,
+        marginTop:40,
+        paddingRight:20,
+        opacity:1,
+        position:'absolute',
+        alignItems:"flex-end"
+    },
+
+    img_volta:{
+        width:30,
+        height:30,
+        padding:17,
+    },
+
+    body:{
         flex:2,
         paddingBottom:'10%',
-        paddingTop:80,
+        paddingTop:40,
         borderTopStartRadius:30,
         borderTopEndRadius:30,
         backgroundColor:'white',
@@ -126,17 +146,7 @@ const estilos = StyleSheet.create({
         justifyContent:'center'
     },
 
-    imagem:{
-        width:350, 
-        height:250,
-        borderRadius:30,
-        borderColor:'darkred',
-        opacity:0.4,
-        backgroundColor:'crimson',
-        borderWidth:1
-    },
-
-    viewtexto:{
+    view_texto:{
         alignItems:'flex-start',
         paddingTop:10,
         paddingBottom:20,
@@ -159,55 +169,6 @@ const estilos = StyleSheet.create({
         textAlign:'justify'
     },
 
-    textovermelho:{
-        marginTop:10,
-        fontSize:22,
-        fontStyle:'italic',
-        color:'red',
-        textAlign:'justify'
-    },
-
-    info:{
-        marginTop:20,
-        fontSize:20,
-        fontStyle:'normal',
-        color:'grey',
-        textAlign:'left',
-        textDecorationLine:'underline'
-
-    },
-
-    nome:{
-        marginTop:20,
-        fontSize:25,
-        fontStyle:'normal',
-        fontWeight:'bold',
-        color:'darkred',
-        textAlign:'justify'
-    },
-
-    fone:{
-        marginTop:20,
-        fontSize:25,
-        fontStyle:'normal',
-        fontWeight:'bold',
-        color:'grey',
-        textAlign:'justify'
-    },
-
-    viewtextoimagem:{
-        width:350,
-        opacity:1,
-        marginTop:'3000%',
-        position:'absolute'
-    },
-
-    textoimagem:{
-        color:'darkred',
-        width:350,
-        textAlign:'center',
-        fontSize:30
-    },
     botao:{
         backgroundColor:'crimson',
         borderWidth:1,
@@ -221,7 +182,7 @@ const estilos = StyleSheet.create({
         borderStyle:'solid',  
     },
 
-    textobotao:{
+    texto_botao:{
         color:'white', 
         fontWeight:'bold', 
         fontSize:20

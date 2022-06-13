@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, TextInput, Image, TouchableHighlight, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, TextInput, Image, TouchableOpacity, StyleSheet, ScrollView} from 'react-native';
 
 
 class Login extends Component {
@@ -9,53 +9,53 @@ class Login extends Component {
 
                 <View style = {estilos.fundo}>
 
-                    <Image source = {require ('../Img/Bg.png')} style = {estilos.imagemfundo}/>
+                    <Image source = {require ('../Img/Bg.png')} style = {estilos.img_fundo}/>
 
-                    <View style = {estilos.frente}>
+                    <View style = {estilos.body}>
 
-                        <Image source = {require ('../Img/Logo.png')} style = {estilos.imagemlogo}/>
+                        <Image source = {require ('../Img/Logo.png')} style = {estilos.img_logo}/>
 
-                        <View style = {estilos.viewinput}>
+                        <View style = {estilos.view_input}>
 
                             <TextInput style = {estilos.input} placeholder = 'Usuário' placeholderTextColor = {'black'}></TextInput>
 
                         </View>
 
-                        <View style = {estilos.viewinput}>
+                        <View style = {estilos.view_input}>
 
                             <TextInput style = {estilos.input} placeholder = 'Senha' placeholderTextColor = {'black'} secureTextEntry = {true}></TextInput>
 
                         </View>
 
-                        <View style ={estilos.viewbotao}>
+                        <View style ={estilos.view_botao}>
 
-                            <TouchableHighlight style = {estilos.botao} onPress = {() =>this.props.navigation.navigate('Main')}>
+                            <TouchableOpacity style = {estilos.botao} onPress = {() =>this.props.navigation.navigate('Main')}>
 
-                                <Text style = {estilos.textobotao}>Entrar</Text>    
+                                <Text style = {estilos.texto_botao}>Entrar</Text>    
 
-                            </TouchableHighlight>
+                            </TouchableOpacity>
 
                         </View>
 
-                        <View style = {estilos.viewtexto}>
+                        <View style = {estilos.view_texto}>
 
                             <Text style = {estilos.texto}>Não tenho uma conta</Text>
 
-                            <TouchableHighlight onPress = {() =>this.props.navigation.navigate('SingUp')}>
+                            <TouchableOpacity onPress = {() =>this.props.navigation.navigate('SingUp')}>
 
-                                <Text style = {estilos.textocadastro}>Criar Conta</Text>
+                                <Text style = {estilos.texto_cadastro}>Criar Conta</Text>
 
-                            </TouchableHighlight>
+                            </TouchableOpacity>
 
                         </View>
 
-                        <View style = {estilos.viewinfo}>
+                        <View style = {estilos.view_info}>
 
-                            <TouchableHighlight onPress = {() =>this.props.navigation.navigate('Sobre')}>
+                            <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Sobre')}>
 
-                                <Image source = {require ('../Img/Info.png')} style = {estilos.imageminfo}/>
+                                <Image source = {require ('../Img/Info.png')} style = {estilos.img_info}/>
 
-                            </TouchableHighlight>
+                            </TouchableOpacity>
 
                         </View>
 
@@ -82,14 +82,14 @@ const estilos = StyleSheet.create({
         backgroundColor:'crimson',
     },
 
-    imagemfundo:{
+    img_fundo:{
         flex:1,
         width:450,
         height:100,
         paddingBottom:"20%"
     },
 
-    frente:{
+    body:{
         flex:2,
         paddingBottom:'10%',
         paddingTop:80,
@@ -100,12 +100,12 @@ const estilos = StyleSheet.create({
         justifyContent:'center'
     },
 
-    imagemlogo:{
+    img_logo:{
         width:200, 
         height:150,
     },
 
-    viewinput:{
+    view_input:{
         marginTop:10, 
         marginLeft:20, 
         marginRight:20, 
@@ -123,7 +123,7 @@ const estilos = StyleSheet.create({
         padding:10
     },
 
-    viewbotao:{
+    view_botao:{
         flexDirection:'row', 
         alignItems:'center', 
         justifyContent:'center'
@@ -142,13 +142,13 @@ const estilos = StyleSheet.create({
         borderStyle:'solid',  
     },
 
-    textobotao:{
+    texto_botao:{
         color:'white', 
         fontWeight:'bold', 
         fontSize:20
     },
 
-    viewtexto:{
+    view_texto:{
         marginTop:20,
         marginBottom:10, 
         marginLeft:20, 
@@ -161,17 +161,17 @@ const estilos = StyleSheet.create({
         color:'grey'
     },
 
-    textocadastro:{
+    texto_cadastro:{
         fontSize:17, 
         textAlign:'center',
         color:'crimson'
     },
 
-    viewinfo:{
+    view_info:{
         alignItems:'flex-start',
     },
 
-    imageminfo:{
+    img_info:{
         width:30,
         height:30,
         backgroundColor:'crimson',
